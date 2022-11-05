@@ -20,8 +20,8 @@ console.log(userChoice)
 while (!array.includes(userChoice)) {
     window.alert("Please enter a valid character Uppercase R, P, or S")
     game()
+    return 
 }
-
  
 
 //randomly selects the option for computer
