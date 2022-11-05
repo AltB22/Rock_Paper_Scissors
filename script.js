@@ -7,32 +7,44 @@ var tie = 0
 //Defines the array of computer options
 var array = ["R", "P", "S"]
 
+window.alert("Let's play Rock, Paper, Scissors!!")
 //declares game function
 var game = function() {
 
 //Prompt to select R, P, or S
-var userChoice = window.prompt("Enter, R, P, or S")
+
+
+var userChoice = window.prompt("Enter, R for Rock, P for Paper, or S for Scissors")
 console.log(userChoice)
 
+while (!array.includes(userChoice)) {
+    window.alert("Please enter a valid character Uppercase R, P, or S")
+    game()
+}
+
+ 
 
 //randomly selects the option for computer
 var pcSelection = array[Math.floor(Math.random() * array.length)]
 console.log(pcSelection)
 
+window.alert("Computer chose " + pcSelection + "\nYou chose " + userChoice)
+
 
 if (userChoice == pcSelection) {
     tie = tie + 1 
-    window.alert("It's a tie! Current score is: Win " + win + " Lose " + lose + " Tie " + tie)
+    
+    window.alert("It's a tie! \nCurrent score is: \nWin " + win + " Lose " + lose + " Tie " + tie)
   
 }
 
 else if (userChoice == "R") {
     if(pcSelection == "P") {
         lose = lose + 1
-        window.alert("You lose! Current score is: Win " + win + " Lose " + lose + " Tie " + tie)
+        window.alert("You lose! \nCurrent score is: Win " + win + " Lose " + lose + " Tie " + tie)
     } else if (pcSelection == "S"){
         win = win + 1
-        window.alert("You win! Current score is: Win " + win + " Lose " + lose + " Tie " + tie)
+        window.alert("You win! \nCurrent score is: Win " + win + " Lose " + lose + " Tie " + tie)
     }
   
 }
@@ -40,10 +52,10 @@ else if (userChoice == "R") {
 else if (userChoice == "P") {
     if(pcSelection == "S") {
         lose = lose + 1
-        window.alert("You lose! Current score is: Win " + win + " Lose " + lose + " Tie " + tie)
-    } else if (pcSelection == "R"){
+        window.alert("You lose! \nCurrent score is: Win " + win + " Lose " + lose + " Tie " + tie)
+    } else if (pcSelection == "R" || "r"){
         win = win + 1
-        window.alert("You win! Current score is: Win " + win + " Lose " + lose + " Tie " + tie)
+        window.alert("You win! \nCurrent score is: Win " + win + " Lose " + lose + " Tie " + tie)
     }
   
 }
@@ -51,10 +63,10 @@ else if (userChoice == "P") {
 else if (userChoice == "S") {
     if(pcSelection == "P") {
         lose = lose + 1
-        window.alert("You lose! Current score is: Win " + win + " Lose " + lose + " Tie " + tie)
+        window.alert("You lose! \nCurrent score is: Win " + win + " Lose " + lose + " Tie " + tie)
     } else if (pcSelection == "R"){
         win = win + 1
-        window.alert("You win! Current score is: Win " + win + " Lose " + lose + " Tie " + tie)
+        window.alert("You win! \nCurrent score is: Win " + win + " Lose " + lose + " Tie " + tie)
     }
  
 }
@@ -71,7 +83,7 @@ while (playAgain) {
     playAgain = window.confirm("Would you like to play again?")
 }
 if (!playAgain) {
-    (window.alert("Thanks for playing! Final Score is: Win " + win + " Lose " + lose + " Tie " + tie))
+    (window.alert("Thanks for playing! \nFinal Score is: Win " + win + " Lose " + lose + " Tie " + tie))
 
 }
 
