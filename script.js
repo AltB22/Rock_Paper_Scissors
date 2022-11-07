@@ -17,6 +17,7 @@ var game = function() {
 var userChoice = window.prompt("Enter, R for Rock, P for Paper, or S for Scissors")
 console.log(userChoice)
 
+//Creates alert to enter a valid character if user selection not in the array
 while (!array.includes(userChoice)) {
     window.alert("Please enter a valid character Uppercase R, P, or S")
     game()
@@ -53,7 +54,7 @@ else if (userChoice == "P") {
     if(pcSelection == "S") {
         lose = lose + 1
         window.alert("You lose! \nCurrent score is: Win " + win + " Lose " + lose + " Tie " + tie)
-    } else if (pcSelection == "R" || "r"){
+    } else if (pcSelection == "R"){
         win = win + 1
         window.alert("You win! \nCurrent score is: Win " + win + " Lose " + lose + " Tie " + tie)
     }
@@ -61,10 +62,10 @@ else if (userChoice == "P") {
 }
 
 else if (userChoice == "S") {
-    if(pcSelection == "P") {
+    if(pcSelection == "R") {
         lose = lose + 1
         window.alert("You lose! \nCurrent score is: Win " + win + " Lose " + lose + " Tie " + tie)
-    } else if (pcSelection == "R"){
+    } else if (pcSelection == "P"){
         win = win + 1
         window.alert("You win! \nCurrent score is: Win " + win + " Lose " + lose + " Tie " + tie)
     }
@@ -72,6 +73,7 @@ else if (userChoice == "S") {
 }
 
 }
+
 //Launches the game
 
 game()
